@@ -6,7 +6,7 @@ package tictactoe.tictactoe;
  */
 public class TicTacToeGame {
     private static TicTacToeGame gameObject;
-    private State gameModel[][];
+    private final State[][] gameModel;
     private State nextToPlay; // false means the O player is next, true means the X player is next
     private int numMoves;
 
