@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="tictactoe.tictactoe.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.tictactoe.GameController">
+   <children>
+      <Label layoutX="1.0" layoutY="14.0" prefHeight="17.0" prefWidth="400.0" text="Tic-Tac-Toe" />
+      <Button fx:id="topMiddle" layoutX="174.0" layoutY="114.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="topLeft" layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="topRight" layoutX="334.0" layoutY="114.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="middle" layoutX="174.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="middleLeft" layoutX="14.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="middleRight" layoutX="334.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="bottomLeft" layoutX="14.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="bottomMiddle" layoutX="175.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+      <Button fx:id="bottomRight" layoutX="334.0" layoutY="333.0" mnemonicParsing="false" onAction="#handleClick" text="Click" />
+   </children>
+</AnchorPane>
