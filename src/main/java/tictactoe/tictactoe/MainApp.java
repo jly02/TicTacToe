@@ -19,6 +19,7 @@ public class MainApp extends Application {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("game-view.css")).toExternalForm());
         stage.setTitle("Tic-Tac-Toe");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

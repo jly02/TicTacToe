@@ -3,13 +3,16 @@ package tictactoe.tictactoe;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.util.Objects;
 
 public class EndScreenController {
     @FXML
-    Label winnerLabel;
+    private Label winnerLabel;
+    @FXML
+    private AnchorPane scenePane;
 
     /**
      * Switches to the end screen.
@@ -24,5 +27,12 @@ public class EndScreenController {
         stage.setScene(scene);
         stage.show();
         winnerLabel.setText(winnerText);
+    }
+
+    // Exits the window.
+    @FXML
+    private void exitGame() {
+        Stage stage = (Stage) scenePane.getScene().getWindow();
+        stage.close();
     }
 }
