@@ -3,3 +3,7 @@
     -fx-font-family: "Lucida Console";
     -fx-font-size: 20;
 }
+
+#winnerLabel {
+    -fx-font-size: 30;
+}

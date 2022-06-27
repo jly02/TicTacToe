@@ -21,10 +21,7 @@ public class EndScreenController {
      * @param winnerText the text to be displayed
      * @throws IOException if an error occurs when loading the FXML loader
      */
-    protected void switchToEndScreen(ActionEvent e, String winnerText) throws IOException {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("end-screen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+    protected void switchToEndScreen(String winnerText, FXMLLoader fxmlLoader, Stage stage, Scene scene) throws IOException {
         scene.getStylesheets().add(getClass().getResource("game-view.css").toExternalForm());
         stage.setTitle("Game over!");
         stage.setScene(scene);

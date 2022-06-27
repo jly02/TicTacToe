@@ -192,8 +192,11 @@ public class GameController {
                     break;
             }
 
-            EndScreenController endScreen = new EndScreenController();
-            endScreen.switchToEndScreen(e, winnerText);
+            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("end-screen.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            EndScreenController endScreen = fxmlLoader.getController();
+            endScreen.switchToEndScreen(winnerText, fxmlLoader, stage, scene);
         }
     }
 }
