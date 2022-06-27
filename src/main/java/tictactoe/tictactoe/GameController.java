@@ -2,10 +2,16 @@ package tictactoe.tictactoe;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 /**
  * The GameController class handles all actions done by the user to the game screen.
@@ -57,7 +63,7 @@ public class GameController {
      * @param e action used to find what button was clicked
      */
     @FXML
-    protected void handleClick(ActionEvent e) {
+    protected void handleClick(ActionEvent e) throws IOException {
         String space = ((Button) e.getSource()).getId();
         ((Button) e.getSource()).setVisible(false);
         TicTacToeGame game = TicTacToeGame.getGameObject(); // this could break, lol
@@ -65,7 +71,7 @@ public class GameController {
         TicTacToeGame.State gameState = updateBoard(space, nextTurnO, game);
 
         // Handles the event that the game has ended
-        gameEnd(gameState);
+        gameEnd(e, gameState);
 
         if (nextTurnO) {
             nextTurnLabel.setText("It is X's turn to play.");
@@ -170,9 +176,9 @@ public class GameController {
      *
      * @param state the final state of the game
      */
-    protected void gameEnd(TicTacToeGame.State state) {
+    protected void gameEnd(ActionEvent e, TicTacToeGame.State state) throws IOException {
         if(state != null) {
-            String winnerText = "";
+            String winnerText = null;
 
             switch(state) {
                 case BLANK:
@@ -186,7 +192,8 @@ public class GameController {
                     break;
             }
 
-
+            EndScreenController endScreen = new EndScreenController();
+            endScreen.switchToEndScreen(e, winnerText);
         }
     }
 }
