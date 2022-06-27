@@ -172,17 +172,21 @@ public class GameController {
      */
     protected void gameEnd(TicTacToeGame.State state) {
         if(state != null) {
+            String winnerText = "";
+
             switch(state) {
                 case BLANK:
-                    System.out.println("It was a tie!");
+                    winnerText = "It was a tie!";
                     break;
                 case O:
-                    System.out.println("O has won!");
+                    winnerText = "Player O has won!";
                     break;
                 case X:
-                    System.out.println("X has won!");
+                    winnerText = "Player X has won!";
                     break;
             }
+
+
         }
     }
 }
