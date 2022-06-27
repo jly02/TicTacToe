@@ -196,7 +196,7 @@ public class GameController {
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("end-screen.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             EndScreenController endScreen = fxmlLoader.getController();
-            endScreen.switchToEndScreen(winnerText, fxmlLoader, stage, scene);
+            endScreen.switchToEndScreen(winnerText, stage, scene);
         }
     }
 }

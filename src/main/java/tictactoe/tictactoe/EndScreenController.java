@@ -9,20 +9,21 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class EndScreenController {
     @FXML
     Label winnerLabel;
 
     /**
-     * Switches the screen to the end screen after the game has ended.
+     * Switches to the end screen.
      *
-     * @param e the event source of the action
      * @param winnerText the text to be displayed
-     * @throws IOException if an error occurs when loading the FXML loader
+     * @param stage the window that is being changed
+     * @param scene the scene to be switched to
      */
-    protected void switchToEndScreen(String winnerText, FXMLLoader fxmlLoader, Stage stage, Scene scene) throws IOException {
-        scene.getStylesheets().add(getClass().getResource("game-view.css").toExternalForm());
+    protected void switchToEndScreen(String winnerText, Stage stage, Scene scene) {
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("game-view.css")).toExternalForm());
         stage.setTitle("Game over!");
         stage.setScene(scene);
         stage.show();
