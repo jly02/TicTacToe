@@ -23,6 +23,9 @@ public class EndScreenController {
      */
     protected void switchToEndScreen(String winnerText, Stage stage, Scene scene) {
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("game-view.css")).toExternalForm());
+        // As in MainApp, if your IDE cannot find the resource, use the commented out line.
+        // FXMLLoader fxmlLoader = new FXMLLoader(new URL("file:///[filepath goes here...]/end-screen.fxml"));
+
         stage.setTitle("Game over!");
         stage.setScene(scene);
         stage.show();
