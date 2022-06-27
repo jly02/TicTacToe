@@ -194,6 +194,9 @@ public class GameController {
 
             Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("end-screen.fxml"));
+            // As in MainApp, if your IDE cannot find the resource, use the commented out line.
+            // FXMLLoader fxmlLoader = new FXMLLoader(new URL("file:///[filepath goes here...]/end-screen.fxml"));
+
             Scene scene = new Scene(fxmlLoader.load());
             EndScreenController endScreen = fxmlLoader.getController();
             endScreen.switchToEndScreen(winnerText, stage, scene);
