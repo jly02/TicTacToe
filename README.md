@@ -1,4 +1,4 @@
 # TicTacToe
 just some tic-tac-toe
 
-Requires JavaFX version 11 or higher
+Can run on JavaFX version 11 or higher
